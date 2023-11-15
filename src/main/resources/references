@@ -10,3 +10,6 @@ https://objectcomputing.com/resources/publications/sett/november-2005-create-pro
 - ByteBuddy
 - Java ASM
 - AspectJ
+
+# Add as VM Options
+--add-opens=java.base/java.lang=ALL-UNNAMED
