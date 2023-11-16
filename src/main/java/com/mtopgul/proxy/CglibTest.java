@@ -4,6 +4,7 @@ import com.mtopgul.proxy.interceptor.BasicInterceptor;
 import com.mtopgul.proxy.interceptor.FixedValueInterceptor;
 import com.mtopgul.proxy.interceptor.MethodMetaInterceptor;
 import com.mtopgul.proxy.service.PersonService;
+import net.sf.cglib.core.NamingPolicy;
 import net.sf.cglib.proxy.Enhancer;
 
 /**
@@ -29,6 +30,7 @@ public class CglibTest {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(PersonService.class);
         enhancer.setCallback(new BasicInterceptor());
+        enhancer.setNamingPolicy(new MyNamingPolicy());
         PersonService proxyService = (PersonService) enhancer.create();
         proxyService.performAction();
     }
