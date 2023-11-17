@@ -12,6 +12,6 @@ public class BeanMapTest {
         bean.setValue("Hello, CGLIB!");
 
         BeanMap map = BeanMap.create(bean);
-        System.out.println("Hello, CGLIB!".equals(map.get("value")));
+        assert "Hello, CGLIB!".equals(map.get("value"));
     }
 }

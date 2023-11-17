@@ -18,6 +18,6 @@ public class BeanGeneratorTest {
         setter.invoke(myBean, "Some string value set by a CGLIB");
         Method getter = myBean.getClass().getMethod("getName");
 
-        System.out.println("Some string value set by a CGLIB".equals(getter.invoke(myBean))); // true
+        assert "Some string value set by a CGLIB".equals(getter.invoke(myBean)); // true
     }
 }

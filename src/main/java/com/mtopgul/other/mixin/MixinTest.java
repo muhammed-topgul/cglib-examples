@@ -1,4 +1,4 @@
-package com.mtopgul.other;
+package com.mtopgul.other.mixin;
 
 import net.sf.cglib.proxy.Mixin;
 
@@ -19,8 +19,8 @@ public class MixinTest {
                 });
 
         MixinInterface mixinDelegate = (MixinInterface) mixin;
-        System.out.println("Fist behaviour".equals(mixinDelegate.first()));    // true
-        System.out.println("Second behaviour".equals(mixinDelegate.second())); // true
+        assert "Fist behaviour".equals(mixinDelegate.first());    // true
+        assert "Second behaviour".equals(mixinDelegate.second()); // true
     }
 }
 

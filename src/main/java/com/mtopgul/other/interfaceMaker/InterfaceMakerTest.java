@@ -1,4 +1,4 @@
-package com.mtopgul.other;
+package com.mtopgul.other.interfaceMaker;
 
 import net.sf.cglib.core.Signature;
 import net.sf.cglib.proxy.InterfaceMaker;
@@ -18,9 +18,9 @@ public class InterfaceMakerTest {
         interfaceMaker.add(fooSignature, new Type[0]);
         Class newInterface = interfaceMaker.create();
         Method[] methods = newInterface.getMethods();
-        System.out.println(methods.length);                                  // 1
-        System.out.println(methods[0].getName());                            // foo
-        System.out.println(Arrays.toString(methods[0].getParameterTypes())); // [int, short]
-        System.out.println(methods[0].getReturnType());                      // double
+        assert methods.length == 1;
+        assert methods[0].getName().equals("foo");
+        assert Arrays.toString(methods[0].getParameterTypes()).equals("[int, short]");
+        assert methods[0].getReturnType().toString().equals("double");
     }
 }

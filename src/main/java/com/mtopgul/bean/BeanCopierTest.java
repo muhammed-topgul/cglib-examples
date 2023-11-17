@@ -13,7 +13,7 @@ public class BeanCopierTest {
         bean.setValue("Java");
         OtherSampleBean otherBean = new OtherSampleBean();
         copier.copy(bean, otherBean, null);
-        System.out.println("Java".equals(otherBean.getValue())); // true
+        assert "Java".equals(otherBean.getValue()); // true
     }
 }
 

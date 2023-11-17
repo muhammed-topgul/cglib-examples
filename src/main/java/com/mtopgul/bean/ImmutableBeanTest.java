@@ -12,12 +12,12 @@ public class ImmutableBeanTest {
         String result = "Java";
         bean.setValue(result);
         SampleBean immutableBean = (SampleBean) ImmutableBean.create(bean);
-        System.out.println(immutableBean.getValue().equals(result)); // true
+        assert immutableBean.getValue().equals(result); // true
 
         String newResult = "Spring";
         bean.setValue(newResult);
-        System.out.println(immutableBean.getValue().equals(newResult)); // true
-        System.out.println(bean.getValue().equals(newResult)); // true
+        assert immutableBean.getValue().equals(newResult); // true
+        assert bean.getValue().equals(newResult); // true
 
         immutableBean.setValue(newResult); // Exception in thread "main"
                                            // java.lang.IllegalStateException: Bean is immutable
